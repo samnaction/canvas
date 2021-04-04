@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById('myCanvas');
+            
+            var context = canvas.getContext('2d');
+
+            context.canvas.width = window.innerWidth;
+            context.canvas.height = window.innerHeight;
+
+            
+            context.translate(canvas.width,canvas.height);
+            
+            context.rotate(1 * Math.PI);
+            context.fillStyle = 'gray';
+            context.fillRect(0,0,canvas.width,canvas.height);
+
+            
+            context.beginPath();
+            context.strokeStyle = 'red';
+            context.moveTo(500, 500);
+            context.lineTo(700, 300);
+            context.lineTo(500,300);
+            context.closePath();
+            context.stroke();
+            context.fillStyle = `rgb(106,138,100)`;
+            context.fill();
+        }
+    </script>
+
+</head>
+<body>
+    <canvas id="myCanvas" width=100% height=100%></canvas>
+</body>
+</html>
